@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>There's No Place Like 127.0.0.1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body{
+            background-color: lightgrey;
+            color: rgb(70, 70, 70);
+        }
+        h1{
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+            text-align: center;
+        }
+        div.container {
+            display: flex;
+            height: 25vh;
+        }
+        div.number{
+            background-color: skyblue;
+            margin: 5px;
+            border: 2px solid black;
+            flex: 1;
+            font-size: 700%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Introduksjon til HTML, CSS og Javascript</h1>
+    <!-- Container referer til div'en som ligger bak "number" div'ene, denne brukes for å lettere formatere div number-->
+    <!-- lagt til ID på number -->
+    
+    <div class="container">
+        <div id="a1" class="number" onclick="show(this,'a2','b1')">7</div>
+        <div id="a2" class="number" onclick="show(this,'a1','a3','b2')">2</div>
+        <div id="a3" class="number" onclick="show(this,'a2','b3')">5</div>
+    </div>
+
+    <div class="container">
+        <div id="b1" class="number" onclick="show(this,'a1','c1','b2')">1</div>
+        <div id="b2" class="number" onclick="show(this,'a2','b1','b3','c2')"></div>
+        <div id="b3" class="number" onclick="show(this,'a3','b2','c3')">3</div>
+    </div>
+
+    <div class="container">
+        <div id="c1" class="number" onclick="show(this,'b1','c2')">6</div>
+        <div id="c2" class="number" onclick="show(this,'c1','b2','c3')">9</div>
+        <div id="c3" class="number" onclick="show(this,'c2','b3')">8</div>
+    </div>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <script type="text/javascript">
+        var counter = 0;
+        var lastClickedDiv;
+        
+
+        function show(tag, alt1, alt2, alt3, alt4){
+            if(alt1 && document.getElementById(alt1).innerHTML=='')
+            {   
+                var tallet = tag.innerHTML;
+                erase(tag);
+                add(document.getElementById(alt1),tallet);
+            }
+            if(alt2 && document.getElementById(alt2).innerHTML=='')
+            {   
+                var tallet = tag.innerHTML;
+                erase(tag);
+                add(document.getElementById(alt2),tallet);
+            }
+            if(alt3 && document.getElementById(alt3).innerHTML=='')
+            {   
+                var tallet = tag.innerHTML;
+                erase(tag);
+                add(document.getElementById(alt3),tallet);
+            }
+            if(alt4 && document.getElementById(alt4).innerHTML=='')
+            {   
+                var tallet = tag.innerHTML;
+                erase(tag);
+                add(document.getElementById(alt4),tallet);
+            }
+        }
+        function erase(div){
+            div.innerHTML=''
+        }
+        function add(div,tallet){
+            div.innerHTML=tallet;
+        }
+    </script>
+</body>
+
+</html>
