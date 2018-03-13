@@ -1,0 +1,81 @@
+﻿
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title></title>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div class="header">
+            <header>
+                <i class="fas fa-dollar-sign" id="headDollar"></i>
+                <h3 id="heading">Register all economic transactions here</h3>
+            </header>
+        </div>
+        <!-- This section is for the select list and input forms -->
+        <div id="wrapInputs">
+            <select size="1" name="persons" id="dropList" required>
+                <option value="all">All</option>
+                <option value="aadila">Aadila</option>
+                <option value="abdul">Abdul</option>
+                <option value="ambokile">Ambokile</option>
+                <option value="godfrey">Godfrey</option>
+                <!-- Placeholder area
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                    <option value="#">Name</option>
+                -->
+            </select>
+            <!-- Form for inputing user data, will also sum up social + shares into total amount -->
+            <form class="currencyData" action="/_actionpage.php" oninput="x.value=parseInt(chkBox.value)+parseInt(sharesField.value)">
+                <input type="checkbox" id="chkBox" name="social" value="1" required />
+                <label for="checkbox" class="check-box">Social</label>
+                <input id="sharesField" type="number" name="shares" min="0" max="128" step="0" value="0" />
+                <label for="sharesField" class="shares-field">Shares</label>
+                <br />
+                <label for="outputNum" class="output-num">Total amount = </label>
+                <output id="outputNum" name="x" for="chkBox sharesField"></output><p> <i class="fas fa-dollar-sign"></i></p>
+                <br />
+                <input id="loanField" type="number" name="loan" placeholder=" Loan" />
+                <br />
+                <input id="paybackField" type="number" name="installment" placeholder=" Payback" />
+                <br />
+                <input id="submitBtn" type="submit" name="register" value="Register">
+            </form>
+        </div>
+        <!-- SECTION END SECTION END SECTION END SECTION END SECTION END SECTION END -->
+        <div class="footer">
+            <footer>&copy; Trym Kristian Bjørnvik - 2018</footer>
+        </div>
+    </div>
+</body>
+</html>
