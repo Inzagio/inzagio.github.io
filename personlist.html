@@ -9,17 +9,30 @@
     <title></title>
 </head>
 <body>
-
     <div id="wrapper">
         <div class="header">
             <header>
-                <i class="fas fa-dollar-sign" id="headDollar"></i>
-                <h3 id="heading">Register all economic transactions here</h3>
+                <div id="navigation">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn"><!-- Menu --> <i class="fas fa-dollar-sign" id="headDollar"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#">Status</a>
+                                <a href="#">Status</a>
+                                <a href="#">Status</a>
+                                <a href="#">Status</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="slogan">
+                    <h5 id="heading"> ViCobAPP - Making Village Community Banking easy! Since 2018 </h5>
+                </div>
             </header>
         </div>
         <!-- This section is for the select list and input forms -->
         <div id="wrapInputs">
-            <select size="1" name="persons" id="dropList" required>
+            <select title="Displays all members of the VICOBA - Select one or all." size="1" name="persons" id="dropList" required>
                 <option value="all">All</option>
                 <option value="aadila">Aadila</option>
                 <option value="abdul">Abdul</option>
@@ -57,24 +70,24 @@
             </select>
             <!-- Form for inputing user data, will also sum up social + shares into total amount -->
             <form class="currencyData" action="/_actionpage.php" oninput="x.value=parseInt(chkBox.value)+parseInt(sharesField.value)">
-                <input type="checkbox" id="chkBox" name="social" value="1" required />
+                <input title="Field required - Funds are valued at 1$" type="checkbox" id="chkBox" name="social" value="1" required />
                 <label for="checkbox" class="check-box">Social</label>
-                <input id="sharesField" type="number" name="shares" min="0" max="128" step="0" value="0" />
+                <input title="Total amount of shares to purchase along with Social Funds" id="sharesField" type="number" name="shares" min="0" max="128" step="0" value="0" />
                 <label for="sharesField" class="shares-field">Shares</label>
                 <br />
                 <label for="outputNum" class="output-num">Total amount = </label>
-                <output id="outputNum" name="x" for="chkBox sharesField"></output><p> <i class="fas fa-dollar-sign"></i></p>
+                <output id="outputNum" name="x" for="chkBox sharesField"></output><p id="iconD">  <i class="fas fa-dollar-sign"></i></p>
                 <br />
-                <input id="loanField" type="number" name="loan" placeholder=" Loan" />
+                <input title="Loan is for money being borrowed." id="loanField" type="number" name="loan" placeholder=" Loan" />
                 <br />
-                <input id="paybackField" type="number" name="installment" placeholder=" Payback" />
+                <input title="Payback is for money being paid back to the VICOBA." id="paybackField" type="number" name="installment" placeholder=" Payback" />
                 <br />
                 <input id="submitBtn" type="submit" name="register" value="Register">
             </form>
         </div>
         <!-- SECTION END SECTION END SECTION END SECTION END SECTION END SECTION END -->
         <div class="footer">
-            <footer>&copy; Trym Kristian Bjørnvik - 2018</footer>
+            <footer><p id="footertext"> &copy; Trym Kristian Bjørnvik - 2018</p> </footer>
         </div>
     </div>
 </body>
